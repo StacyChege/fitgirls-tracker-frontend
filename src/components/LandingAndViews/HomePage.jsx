@@ -10,7 +10,7 @@ const HomePage = () => {
 
   const handleStartJourney = () => {
     if (name) {
-      navigate('/dashboard', { state: { userName: name } });
+      navigate(`/dashboard/${encodeURIComponent(name)}`);
     }
   };
 
