@@ -1,6 +1,4 @@
-import { useParams } from 'react-router-dom';
 import React from 'react';
-// Corrected import: FaBookmark is the correct icon name for a save icon
 import { FaChartLine, FaBookmark, FaUser } from 'react-icons/fa';
 
 function computeDayStreak(userActivities) {
@@ -25,8 +23,9 @@ function computeDayStreak(userActivities) {
 }
 
 const DashboardPage = () => {
-  const { name } = useParams();
-  const displayName = decodeURIComponent(name || '').trim() || "Athlete";
+  // Get the username from local storage instead of URL params
+  const username = localStorage.getItem('username');
+  const displayName = username || "Athlete";
 
   // Mock Data
   const userActivities = [
@@ -67,7 +66,6 @@ const DashboardPage = () => {
               <p>Stay consistent. Small wins compound.</p>
             </div>
           </div>
-          {/* Stat Cards - This div is now a grid to make them horizontal */}
           <div className='grid grid-cols-3 gap-3'>
             <StatCard label="Completed Workouts" value={completedWorkouts} icon={<FaChartLine />} />
             <StatCard label="Saved Workouts" value={savedWorkouts} icon={<FaBookmark />} />
@@ -115,7 +113,6 @@ const DashboardPage = () => {
 
 export default DashboardPage;
 
-// Updated StatCard component
 function StatCard({ label, value, icon }) {
   return (
     <div className="bg-white rounded-2xl shadow p-4 text-center">

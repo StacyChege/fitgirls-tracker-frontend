@@ -3,7 +3,7 @@ import { FaHeart, FaCertificate, FaUsers, FaChartLine, FaCheckCircle, FaUser } f
 import { useNavigate } from 'react-router-dom';
 
 const AboutPage = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Initialize navigation
 
   const handleGetStarted = () => {
     navigate('/');
@@ -51,6 +51,7 @@ const AboutPage = () => {
           <h2 className='text-3xl md:text-4xl font-extrabold mb-8 text-gray-900'>
             Our Values
           </h2>
+          {/* This is where we show core values using 'ValueCard' components. */}
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             <ValueCard icon={<FaUser />} title="Inclusivity" description="Every woman, regardless of fitness level, body type, or experience, deserves to feel welcomed and supported in her fitness journey." />
             <ValueCard icon={<FaCheckCircle />} title="Expertise" description="All our trainers are certified professionals who bring real knowledge, experience, and evidence-based approaches to women's fitness." />
@@ -60,6 +61,7 @@ const AboutPage = () => {
           <h2 className='text-3xl md:text-4xl font-extrabold mt-16 mb-8 text-gray-900'>
             Meet Our Founding Team
           </h2>
+          {/* This is where we showcase our founding team members. */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TeamMember name="Alex Johnson" role="Co-Founder & CEO" bio="Former fitness trainer with 10+ years of experience helping women achieve their health goals." />
             <TeamMember name="Sarah Martinez" role="Co-Founder & CTO" bio="Tech entrepreneur passionate about using technology to make fitness more accessible." />
@@ -69,7 +71,7 @@ const AboutPage = () => {
 
         <hr className='border-gray-200' />
 
-        {/* Section 3: Call to Action */}
+        {/* Section 3: Final Call to Action */}
         <section className='text-center py-10'>
           <div className='bg-gray-100 rounded-lg shadow-md p-10 max-w-3xl mx-auto'>
             <h2 className='text-2xl font-bold mb-4 text-gray-800'>

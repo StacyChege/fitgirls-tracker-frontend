@@ -17,7 +17,10 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/experts</li>">Experts</Link>
+          <Link to="/experts">Experts</Link>
+        </li>
+        <li>
+          <Link to="/workouts">Workouts</Link>
         </li>
         {/* Add Dashboard later conditionally */}
         {isDashboard && (
